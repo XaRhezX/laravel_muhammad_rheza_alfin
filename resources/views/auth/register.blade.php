@@ -5,8 +5,15 @@
         @csrf
 
         <div class="card-body">
-            <h2 class="card-title text-center mb-4">{{ __('Create new account') }}</h2>
+            <h2 class="mb-4 text-center card-title">{{ __('Create new account') }}</h2>
 
+            <div class="mb-3">
+                <label class="form-label">{{ __('Username') }}</label>
+                <input type="text" name="username" class="form-control @error('username') is-invalid @enderror" placeholder="{{ __('Username') }}">
+                @error('username')
+                <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
             <div class="mb-3">
                 <label class="form-label">{{ __('Name') }}</label>
                 <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="{{ __('Name') }}">
@@ -43,7 +50,7 @@
     </form>
 
     @if (Route::has('login'))
-    <div class="text-center text-muted mt-3">
+    <div class="mt-3 text-center text-muted">
         {{ __('Already have account?') }} <a href="{{ route('login') }}" tabindex="-1">{{ __('Sign in') }}</a>
     </div>
     @endif

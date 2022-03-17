@@ -5,12 +5,12 @@
         @csrf
 
         <div class="card-body">
-            <h2 class="card-title text-center mb-4">{{ __('Login to your account') }}</h2>
+            <h2 class="mb-4 text-center card-title">{{ __('Login to your account') }}</h2>
 
             <div class="mb-3">
-                <label class="form-label">{{ __('Email address') }}</label>
-                <input type="email" name="email" value="{{ old('email') }}" class="form-control @error('email') is-invalid @enderror" placeholder="{{ __('Enter email') }}" required autofocus tabindex="1">
-                @error('email')
+                <label class="form-label">{{ __('Username') }}</label>
+                <input type="username" name="username" value="{{ old('username') }}" class="form-control @error('username') is-invalid @enderror" placeholder="{{ __('Enter username') }}" required autofocus tabindex="1">
+                @error('username')
                 <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
@@ -44,7 +44,7 @@
     </form>
 
     @if (Route::has('register'))
-    <div class="text-center text-muted mt-3">
+    <div class="mt-3 text-center text-muted">
         {{ __("Don't have account yet?") }} <a href="{{ route('register') }}" tabindex="-1">{{ __('Sign up') }}</a>
     </div>
     @endif

@@ -11,16 +11,12 @@
     </div>
     <div class="page-body">
         <div class="container-xl">
-
-            <div class="alert alert-info">
-                <div class="alert-title">Sample table page</div>
-            </div>
-
             <div class="card">
                 <div class="table-responsive">
                     <table class="table" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
+                                <th>{{ __('Username') }}</th>
                                 <th>{{ __('Name') }}</th>
                                 <th>{{ __('Email Address') }}</th>
                                 <th>{{ __('Created at') }}</th>
@@ -30,6 +26,7 @@
                         <tbody>
                         @foreach($users as $user)
                             <tr>
+                                <td>{{ $user->username }}</td>
                                 <td>{{ $user->name }}</td>
                                 <td>{{ $user->email }}</td>
                                 <td>{{ $user->created_at }}</td>
@@ -40,7 +37,7 @@
                     </table>
                 </div>
                 @if( $users->hasPages() )
-                <div class="card-footer pb-0">
+                <div class="pb-0 card-footer">
                     {{ $users->links() }}
                 </div>
                 @endif

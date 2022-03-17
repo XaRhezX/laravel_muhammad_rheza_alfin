@@ -14,7 +14,8 @@
             <div class="card">
                 <div class="card-body">
                     <p class="card-text">
-                        {{ __('Sample static text page ') }}
+                        Code by : Muhammad Rheza Alfin<br>
+                        Contact : 0877-2000-1036
                     </p>
                 </div>
             </div>
